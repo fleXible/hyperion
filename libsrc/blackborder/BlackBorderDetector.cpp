@@ -21,7 +21,7 @@ uint8_t BlackBorderDetector::calculateThreshold(double threshold)
 
 	uint8_t blackborderThreshold = uint8_t(rgbThreshold);
 
-	std::cout << "BLACKBORDER INFO: threshold set to " << threshold << " (" << int(blackborderThreshold) << ")" << std::endl;
+	// std::cout << "BLACKBORDER INFO: threshold set to " << threshold << " (" << int(blackborderThreshold) << ")" << std::endl;
 
 	return blackborderThreshold;
 }

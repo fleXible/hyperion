@@ -50,7 +50,7 @@ void JsonServer::newConnection()
 
 	if (socket != nullptr)
 	{
-		std::cout << "JSONSERVER INFO: New connection" << std::endl;
+		// std::cout << "JSONSERVER INFO: New connection from: " << socket->peerAddress().toString().toStdString().c_str() << std::endl;
 		JsonClientConnection * connection = new JsonClientConnection(socket, _hyperion);
 		_openConnections.insert(connection);
 
@@ -61,7 +61,7 @@ void JsonServer::newConnection()
 
 void JsonServer::closedConnection(JsonClientConnection *connection)
 {
-	std::cout << "JSONSERVER INFO: Connection closed" << std::endl;
+	// std::cout << "JSONSERVER INFO: Connection closed" << std::endl;
 	_openConnections.remove(connection);
 
 	// schedule to delete the connection object

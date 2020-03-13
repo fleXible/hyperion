@@ -22,7 +22,7 @@ BlackBorderProcessor::BlackBorderProcessor(const Json::Value &blackborderConfig)
 	_consistentCnt(0),
 	_inconsistentCnt(10)
 {
-	std::cout << "BLACKBORDER INFO: mode:" << _detectionMode << std::endl;
+	// std::cout << "BLACKBORDER INFO: mode:" << _detectionMode << std::endl;
 	// empty
 }
 
