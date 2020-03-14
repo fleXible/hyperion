@@ -162,18 +162,21 @@ void startBootsequence(const Json::Value &config, Hyperion &hyperion)
 			}
 			std::cout << ((result == 0) ? "started" : "failed") << std::endl;
 		}
-
 		// static color
-		if ( ! effectConfig["color"].isNull() && effectConfig["color"].isArray() && effectConfig["color"].size() == 3 )
+		else if ( ! effectConfig["color"].isNull() && effectConfig["color"].isArray() && effectConfig["color"].size() == 3 )
 		{
+			std::cout << "INFO: Boot sequence 'static color', priority=" << priority << ", duration_ms=" << duration_ms << std::endl;
 			boot_color = {
 				(uint8_t)effectConfig["color"][0].asUInt(),
 				(uint8_t)effectConfig["color"][1].asUInt(),
 				(uint8_t)effectConfig["color"][2].asUInt()
 			};
+			hyperion.setColor(priority, boot_color, duration_ms, false);
 		}
-
-		hyperion.setColor(bootcolor_priority, boot_color, 0, false);
+		else
+		{
+			hyperion.setColor(bootcolor_priority, boot_color, 0, false);
+		}
 	}
 }
 
